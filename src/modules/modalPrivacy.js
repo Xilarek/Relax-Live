@@ -1,13 +1,15 @@
 const modalPrivacy = () => {
-    const linkPrivacy = document.querySelector('.link-privacy'),
+    const linkPrivacy = document.querySelectorAll('.link-privacy'),
           modal = document.querySelector('.popup-privacy');
     
     const closeModal = () => {
         modal.style.visibility = 'hidden';
     }
 
-    linkPrivacy.addEventListener('click', () => {
-        modal.style.visibility = 'visible';
+    linkPrivacy.forEach(item => {
+        item.addEventListener('click', () => {
+            modal.style.visibility = 'visible';
+        });
     });
 
     modal.addEventListener('click', e => {
